@@ -1,25 +1,19 @@
 </main>
 
     <!-- TODO: Add back icons to different contact mechanisms -->
-    <footer class="mainfooter">
-      <div class="container">
-      <p>Copyright © 2015 Harish Narayanan</p>
-      <!-- 	<div class="pure-g"> -->
-      <!-- 	  <div class="pure-u-1 pure-u-md-3-5"> -->
-      <!-- 	    <p>Copyright © 2002—2015 Harish Narayanan</p> -->
-      <!-- 	  </div> -->
-	  <!-- <div class="pure-u-1 pure-u-md-2-5 mainfooter"> -->
-	  <!--   <p style="float: right;"> -->
-	  <!--   <img class="svg-icon" alt="" src="/img/icons/twitter.svg"> -->
-	  <!--   <img class="svg-icon" alt="" src="/img/icons/mail.svg"> -->
-	  <!--   <img class="svg-icon" alt="" src="/img/icons/github.svg"> -->
-	  <!--   <img class="svg-icon" alt="" style="padding-bottom: 2px; width: 19px;" src="/img/icons/linkedin.svg"> -->
-	  <!--   <img class="svg-icon" alt="" src="/img/icons/rss.svg"> -->
-	  <!--   </p> -->
-	  <!-- </div> -->
-      <!-- 	</div> -->
+    <footer>
+      <nav class="navbar" style="border-bottom: 0; border-top: 1px solid #eee;">
+	<div class="container">
+	  <ul class="navbar-list">
+            <li class="navbar-item"><a class="navbar-link" href="#">Twitter</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="#">Email</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="#">LinkedIn</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="#">GitHub</a></li>
+	    <li class="navbar-item"><a class="navbar-link" href="#">RSS Feed</a></li>
 
-      </div>
+	  </ul>
+	</div>
+      </nav>
     </footer>
     {{ if .Params.includes_code }}
     <script src="/scripts/highlight.js"></script>
