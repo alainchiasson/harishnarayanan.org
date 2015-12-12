@@ -1541,4 +1541,8 @@ svg {
     width: 20px;
     margin-top: 2.1rem;
     padding-right: 1.5rem;
-}​
+}
+
+.summary {
+    margin-bottom: 1.2rem;
+}
