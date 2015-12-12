@@ -13,36 +13,41 @@ The following list is in addition to the liberal `TODO`s sprinkled all
 over the code.
 
 - Expose RSS feed
-- Every section needs a title and a description in some dictionary
 - Replace the above non-license with something friendlier
 - Replace this file with a useful README
 - Go through the TODOs in the code and this list and create a
   collection of isues on GitHub
+- Replace placeholder favicon.ico, apple-touch-icon.png, tile.png
+  etc. with something custom
 - Grep for and remove all remaining egregious uses of inline styling
-- Collect all article notes and make them draft posts
+- Collect all article notes and make them draft posts (especially from
+ `test-lanyon`)
+- Make large images in article pages overflow the container and go to
+  the full width of the page
 - Create archetypes for each primary content type on the site
 - Incorporate some taxonomy for the articles (e.g. tags like Devops,
-  Kubernetes, Django) to later start connecting up sets of articles
-- Move in souped-up nginx configuration from the earlier repository
-- Create a sister Ansible repository to setup the personal site?
+  Kubernetes, Django) to later start connecting up sets of
+  articles. Similarly for research articles.
 - Reintroduce a meta section of the site... or perhaps move relevant
   information in this README and link to it?
 - Incorporate online learning portfolio somewhere?
 - Highlight recommended classes
 - Add the winter in Asia gallery?
 - Things I am playing with: Mesos, Kubernetes, Go, Containers and
-  Swift-iOS
+  Swift-iOS, Machine Learning, sicm+scheme
 - Catalogue content from the test-lanyon attempt
 - Look at GitHub for a reminder of recent projects
-- Don't hard code the swap file size to 4GB. Instead make it 1.5x
-  system RAM.
 - Canonicalize breakpoints of Pure and Skeleton
 - Computational biology
 - - applied mathematician
   - computational biologist
   - all-around web technologist
 - Embed relevant talks in research articles
+- Look at large green notebook for ideas for node layouts, and footer
+- Incorporate good ideas from https://github.com/h5bp/server-configs-nginx
 
 ## Notes
 
 rsync -aPvhe ssh --delete --exclude-from=/Users/harish/Scratch/Backup/exclude2 public/ ubuntu@harishnarayanan.org:/home/ubuntu/harishnarayanan.org
+
+wget --spider -o wget.log -e robots=off -w 1 -r -p https://harishnarayanan.org/

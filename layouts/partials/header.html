@@ -6,16 +6,18 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>{{ if (index .Site.Data.TitleFixes .Title) }}{{ index .Site.Data.TitleFixes .Title }}{{ else }}{{ .Title }}{{ end }}{{ if ne .URLPath.URL "/" }} &mdash; {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .IsNode }}{{ if (index .Site.Data.Descriptions .Title) }}{{ index .Site.Data.Descriptions .Title }}{{ end }}{{ else }}{{ .Summary }}{{ end }}">
+    <title>{{ if (index .Site.Data.TitleFixes .Title) }}{{ index .Site.Data.TitleFixes .Title }}{{ else }}{{ .Title }}{{ end }}{{ if ne .URLPath.URL "/" }} — {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .IsNode }}{{ if (index .Site.Data.Descriptions .Title) }}{{ index .Site.Data.Descriptions .Title }}{{ end }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ if .Summary }}{{ .Summary }}{{ else }}A placeholder for the “{{ .Title }}” photo album{{ end }}{{ end }}{{ end }}">
     <meta name="author" content="Harish Narayanan">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700%7CLora:400,400italic,700">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    {{ if .Params.includes_code }}
+    <link rel="stylesheet" href="/styles/highlight.css">
+    {{ end }}
   </head>
 
   <body>
@@ -26,14 +28,13 @@
 	<div class="container">
           <h2 class="visuallyhidden"><span id="navigation-description">Main</span> Navigation</h2>
 	  <ul class="navbar-list">
-            <li class="navbar-item"><a class="navbar-link {{ if eq .URLPath.URL "/" }}active{{ end }}" href="/">Home</a></li>
-            <li class="navbar-item"><a class="navbar-link {{ if eq .URLPath.URL "/writing/" }}active{{ end }}" href="/writing/">Writing</a></li>
-            <li class="navbar-item"><a class="navbar-link {{ if eq .URLPath.URL "/projects/" }}active{{ end }}" href="/projects/">Projects</a></li>
-            <li class="navbar-item"><a class="navbar-link {{ if eq .URLPath.URL "/research/" }}active{{ end }}" href="/research/">Research</a></li>
-            <li class="navbar-item"><a class="navbar-link {{ if eq .URLPath.URL "/photos/" }}active{{ end }}" href="/photos/">Photos</a></li>
+            <li class="navbar-item"><a class="navbar-link{{ if eq .URLPath.URL "/" }} active{{ end }}" href="/">About</a></li>
+            <li class="navbar-item"><a class="navbar-link{{ if eq .URLPath.URL "/writing/" }} active{{ end }}" href="/writing/">Writing</a></li>
+            <li class="navbar-item"><a class="navbar-link{{ if eq .URLPath.URL "/projects/" }} active{{ end }}" href="/projects/">Projects</a></li>
+            <li class="navbar-item"><a class="navbar-link{{ if eq .URLPath.URL "/research/" }} active{{ end }}" href="/research/">Research</a></li>
+            <li class="navbar-item"><a class="navbar-link{{ if eq .URLPath.URL "/photos/" }} active{{ end }}" href="/photos/">Photos</a></li>
 	  </ul>
 	</div>
       </nav>
     </header>
     <main id="content">
-<!-- TODO: Move the container div to this partial, so that it doesn't need to be duplicated in other templates -->

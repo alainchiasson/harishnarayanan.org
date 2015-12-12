@@ -1,5 +1,6 @@
 </main>
 
+
 <!-- TODO: Rethink structure of the footer and clean up markup -->
 
     <!--
@@ -23,6 +24,32 @@
 	</div>
       </nav>
     </footer>
+    {{ if .Params.includes_code }}
+    <script src="/scripts/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {{ end }}
+    {{ if .Params.includes_math }}
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    {{ end }}
+    {{ if .Params.includes_video }}
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/jquery.fitvids.js"></script>
+    <script>
+    (function ($, undefined) {
+      "use strict";
+      var $document = $(document);
+      $document.ready(function () {
+        var $postContent = $(".post-content");
+        $postContent.fitVids();
+      });
+    })(jQuery);
+    </script>
+    {{ end }}
+    {{ if eq .URLPath.URL "/projects/" }}
+    <script src="/scripts/xtk.js"></script>
+    <script src="/scripts/thinkbot-demo.js"></script>
+    {{ end }}
   </body>
 </html>
 

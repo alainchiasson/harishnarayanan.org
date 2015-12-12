@@ -2,9 +2,10 @@
 date: 2015-09-12T15:25:19+01:00
 draft: true
 title: Architecting a modern webapp with Django and AngularJS
+category: development
 ---
 
-![Imagining a new webapp](/img/blog/computer-sketchbook-camera.jpg "Imagining a new webapp")
+![Imagining a new webapp](/images/blog/computer-sketchbook-camera.jpg "Imagining a new webapp")
 
 ## A brief history of time
 
